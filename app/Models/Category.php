@@ -12,10 +12,5 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    public static function inRandomOrder()
-    {
-
-    }
-
 
 }
