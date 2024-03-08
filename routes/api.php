@@ -25,8 +25,8 @@ Route::post('categories', [\App\Http\Controllers\Api\CategoryController::class, 
 Route::put('categories/{category}', [\App\Http\Controllers\Api\CategoryController::class, 'update']);
 Route::delete('categories/{category}', [\App\Http\Controllers\Api\CategoryController::class, 'destroy']);
  */
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('categories', \App\Http\Controllers\Api\CategoryController::class);
+    Route::get('products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
 
-Route::apiResource('categories', \App\Http\Controllers\Api\CategoryController::class);
-
-
-Route::get('products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+});
