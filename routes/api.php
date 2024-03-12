@@ -30,3 +30,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
 
 });
+
+/*===========================
+=           posts           =
+=============================*/
+
+Route::apiResource('/posts', \App\Http\Controllers\API\PostController::class);
+
+/*=====  End of posts   ======*/
